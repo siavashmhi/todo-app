@@ -8,7 +8,7 @@
 }
 
 .formContainer button {
-  background-color: rgb(210, 19, 19);
+  background-color: #27b112;
   padding: 15px;
   cursor: pointer;
   color: #fff;
@@ -16,4 +16,11 @@
   border-radius: 8px;
   border: none;
   font-size: 0.9rem;
+}
+
+.formContainer .updateTodo button {
+  width: 400px;
+  margin-top: 15px;
+  background-color: rgb(218, 17, 17);
+  color: #fff;
 }

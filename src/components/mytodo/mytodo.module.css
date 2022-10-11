@@ -15,7 +15,6 @@
   border: none;
   padding: 6px;
   cursor: pointer;
-  border: 1px solid #303030;
   color: #303030;
   background-color: #fff;
   border-radius: 3px;
@@ -24,6 +23,21 @@
 .completeBtn,
 .removeBtn {
   margin-left: 15px;
+}
+
+.editBtn {
+  color: #27b112;
+  border: 1px solid #27b112;
+}
+
+.completeBtn {
+  border: 1px solid #085cec;
+  color: #085cec;
+}
+
+.removeBtn {
+  border: 1px solid #dd0d0d;
+  color: #dd0d0d;
 }
 
 .completed {

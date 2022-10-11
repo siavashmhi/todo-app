@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoForm from "../todo-form/TodoForm";
 import TodoList from "../todo-list/TodoList";
+import Navbar from "../navbar/Navbar";
 import styles from "./todoApp.module.css";
 
 const TodoApp = () => {
@@ -46,14 +47,17 @@ const TodoApp = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <TodoForm addTodoHandler={addTodoHandler} />
-      <div className={styles.todoListContainer}>
-        <TodoList todos={todos} 
-        onComplete={completeHandler} 
-        onDelete={removeHandler} editHandler={editHandler} />
+    <>
+      <Navbar todos={todos} />
+      <div className={styles.container}>
+        <TodoForm addTodoHandler={addTodoHandler} />
+        <div className={styles.todoListContainer}>
+          <TodoList todos={todos} 
+          onComplete={completeHandler} 
+          onDelete={removeHandler} editHandler={editHandler} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

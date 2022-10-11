@@ -1,0 +1,28 @@
+.container {
+    background-color: #303030;
+    padding: 20px;
+    color: #fff;
+}
+
+.container h2 {
+    text-align: start;
+    margin-left: 20px;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.countContainer {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    right: 1;
+}
