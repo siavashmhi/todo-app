@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.editBtn,
+.completeBtn {
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  border: 1px solid #303030;
+  color: #303030;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.completeBtn {
+  margin-left: 15px;
+}

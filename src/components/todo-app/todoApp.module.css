@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  border: 1px solid #ccc;
+  padding: 4rem;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.todoListContainer {
+  width: 500px;
+  /* background-color: red; */
+}

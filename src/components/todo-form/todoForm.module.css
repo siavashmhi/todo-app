@@ -1,0 +1,19 @@
+.formContainer input {
+  width: 400px;
+  padding: 15px 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.formContainer button {
+  background-color: rgb(210, 19, 19);
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+}
