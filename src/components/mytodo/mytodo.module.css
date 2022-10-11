@@ -10,7 +10,8 @@
 }
 
 .editBtn,
-.completeBtn {
+.completeBtn,
+.removeBtn {
   border: none;
   padding: 6px;
   cursor: pointer;
@@ -20,7 +21,8 @@
   border-radius: 3px;
 }
 
-.completeBtn {
+.completeBtn,
+.removeBtn {
   margin-left: 15px;
 }
 

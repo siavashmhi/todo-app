@@ -2,7 +2,7 @@ import React from 'react'
 import MyTodo from '../mytodo/MyTodo'
 import styles from './todoList.module.css'
 
-function TodoList({todos, onComplete}) {
+function TodoList({todos, onComplete, onDelete}) {
 
   if(todos.length === 0) return <p className={styles.message}>Please add some todo!</p>
   
@@ -10,7 +10,9 @@ function TodoList({todos, onComplete}) {
     <div className={styles.container}>
       {todos.map(todo => {
         return <div className={styles.todoContainer} key={todo.id}>
-              <MyTodo todo={todo} onComplete={() => onComplete(todo.id)} />
+              <MyTodo todo={todo} 
+              onComplete={() => onComplete(todo.id)}
+               onDelete={() => onDelete(todo.id)} />
         </div>
       })}
     </div>

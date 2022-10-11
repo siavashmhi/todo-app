@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './mytodo.module.css'
 
-function MyTodo({todo, onComplete}) {
+function MyTodo({todo, onComplete, onDelete}) {
 
   return (
       <div className={`${todo.isCompleted? styles.completed: styles.container}`}>
@@ -10,6 +10,9 @@ function MyTodo({todo, onComplete}) {
           <button className={styles.editBtn}>Edit</button>
           <button onClick={onComplete} className={styles.completeBtn}>
             {todo.isCompleted ? 'uncomplete' : 'complete'}
+          </button>
+          <button className={styles.removeBtn} onClick={onDelete}>
+            delete
           </button>
         </div>
       </div>
