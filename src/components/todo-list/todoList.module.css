@@ -5,3 +5,7 @@
 .todoContainer {
   width: 100%;
 }
+
+.message {
+  color: #303030;
+}

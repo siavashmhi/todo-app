@@ -1,14 +1,16 @@
 import React from 'react'
 import styles from './mytodo.module.css'
 
-function MyTodo({todo}) {
+function MyTodo({todo, onComplete}) {
 
   return (
-      <div className={styles.container}>
+      <div className={`${todo.isCompleted? styles.completed: styles.container}`}>
         <div>{todo.text}</div>
         <div>
           <button className={styles.editBtn}>Edit</button>
-          <button className={styles.completeBtn}>complete</button>
+          <button onClick={onComplete} className={styles.completeBtn}>
+            {todo.isCompleted ? 'uncomplete' : 'complete'}
+          </button>
         </div>
       </div>
   );

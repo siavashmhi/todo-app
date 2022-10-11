@@ -15,11 +15,24 @@ const TodoApp = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const completeHandler = todoId => {
+    //find index todo
+    const indexTodo = todos.findIndex(todo => todo.id === todoId)
+    //cloning object, because we have not mutate
+    const selectedTodo = {...todos[indexTodo]}
+    selectedTodo.isCompleted = !selectedTodo.isCompleted
+    //cloning all objects in array
+    const updatedTodos = [...todos]
+    //add selectedtodo
+    updatedTodos[indexTodo] = selectedTodo
+    setTodos(updatedTodos)
+  }
+
   return (
     <div className={styles.container}>
       <TodoForm addTodoHandler={addTodoHandler} />
       <div className={styles.todoListContainer}>
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onComplete={completeHandler} />
       </div>
     </div>
   );

@@ -23,3 +23,16 @@
 .completeBtn {
   margin-left: 15px;
 }
+
+.completed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  text-decoration: line-through;
+  color: red;
+}
