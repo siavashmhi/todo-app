@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './todoForm.module.css'
 
-const TodoForm = ({addTodoHandler}) => {
+const TodoForm = ({addTodoHandler, edit}) => {
     const [todo, setTodo] = useState("") 
     
     const changeHandler = event => {
@@ -20,8 +20,17 @@ const TodoForm = ({addTodoHandler}) => {
 
     return (
         <form onSubmit={submitHandler} className={styles.formContainer}>
-            <input type="text" value={todo} onChange={changeHandler} />
-            <button type='submit'>add item</button>
+            {
+                edit ? 
+                    <>
+                        <input type="text" value={todo} onChange={changeHandler} placeholder='update todo...' />
+                        <button type='submit'>update</button>
+                    </> :
+                    <>
+                        <input type="text" value={todo} onChange={changeHandler} placeholder='add todo..' />
+                        <button type='submit'>add item</button>
+                    </> 
+            }
         </form>
     );
 };
