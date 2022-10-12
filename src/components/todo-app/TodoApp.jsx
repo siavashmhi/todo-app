@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoForm from "../todo-form/TodoForm";
 import TodoList from "../todo-list/TodoList";
+import SelectOption from "../select-option/SelectOption";
 import Navbar from "../navbar/Navbar";
 import styles from "./todoApp.module.css";
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
+  const [filteredTodos, setFilteredTodos] = useState([])
+  const [selectValue, setSelectValue] = useState("All")
+
+  useEffect(()=> {
+    filterTodos(selectValue)
+  }, [todos, selectValue])
 
   const addTodoHandler = (getTodo) => {
     const newTodo = {
@@ -30,8 +37,8 @@ const TodoApp = () => {
   }
 
   const removeHandler = todoId => {
-    const filteredTodos = todos.filter(todo => todo.id !== todoId)
-    setTodos([...filteredTodos])
+    const myFilteredTodos = todos.filter(todo => todo.id !== todoId)
+    setTodos(myFilteredTodos)
   }
 
   const editHandler = (id, newValue) => {
@@ -46,13 +53,33 @@ const TodoApp = () => {
     setTodos(updatedTodos)
   }
 
+  const filterTodos = selectValue => {
+    switch (selectValue) {
+      case 'completed':
+        const completedTodos = todos.filter(todo => todo.isCompleted)
+        setFilteredTodos(completedTodos)
+        break;
+      case 'uncompleted':
+        const uncompletedTodos = todos.filter(todo => !todo.isCompleted)
+        setFilteredTodos(uncompletedTodos)
+        break;
+      default:
+        setFilteredTodos(todos)
+        break;
+    }
+  }
+
   return (
     <>
-      <Navbar todos={todos} />
+      <Navbar todos={todos}/>
       <div className={styles.container}>
         <TodoForm addTodoHandler={addTodoHandler} />
+        <SelectOption  
+        filterTodos={filterTodos}
+        selectValue={selectValue}
+        setSelectValue={setSelectValue}/>
         <div className={styles.todoListContainer}>
-          <TodoList todos={todos} 
+          <TodoList todos={filteredTodos} 
           onComplete={completeHandler} 
           onDelete={removeHandler} editHandler={editHandler} />
         </div>
