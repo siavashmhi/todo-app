@@ -14,6 +14,7 @@ const TodoApp = () => {
     filterTodos(selectValue)
   }, [todos, selectValue])
 
+  //create and add todo in application
   const addTodoHandler = (getTodo) => {
     const newTodo = {
       id: Math.floor(Math.random() * 1000),
@@ -23,6 +24,7 @@ const TodoApp = () => {
     setTodos([...todos, newTodo]);
   };
 
+  //complete todo in application
   const completeHandler = todoId => {
     //find index todo
     const indexTodo = todos.findIndex(todo => todo.id === todoId)
@@ -36,11 +38,13 @@ const TodoApp = () => {
     setTodos(updatedTodos)
   }
 
+  //remove todo in application
   const removeHandler = todoId => {
     const myFilteredTodos = todos.filter(todo => todo.id !== todoId)
     setTodos(myFilteredTodos)
   }
 
+  //edit todo in application
   const editHandler = (id, newValue) => {
     // console.log(id, newValue);
     const indexTodo = todos.findIndex(todo => todo.id === id)
@@ -53,6 +57,7 @@ const TodoApp = () => {
     setTodos(updatedTodos)
   }
 
+  //filter todo by complete and uncomplete in application
   const filterTodos = selectValue => {
     switch (selectValue) {
       case 'completed':
